@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: executor-service
+
+# Executor Service configuration
+app:
+  executor:
+    thread-pool:
+      size: 10
+    queue:
+      capacity: 1000
+    target:
+      service:
+        url: http://localhost:8080/messages  # URL основного message-service
+
+logging:
+  level:
+    com.example.executorservice: INFO
